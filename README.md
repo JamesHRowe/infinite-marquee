@@ -28,7 +28,9 @@ yarn add infinite-marquee
 
 OR
 
-`@import 'infinite-marquee/assets/css/infinite-marquee`
+```css
+@import 'infinite-marquee/assets/css/infinite-marquee
+```
 
 ### Zero Config
 
