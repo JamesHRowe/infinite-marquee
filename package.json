@@ -1,0 +1,42 @@
+{
+  "name": "infinite-marquee",
+  "version": "1.0.0",
+  "description": "Configurable package to create an infinite marquee effect. Animated with JS or CSS.",
+  "main": "assets/js/infinite-marquee.js",
+  "scripts": {
+    "dev": "mix",
+    "watch": "mix watch",
+    "production": "mix --production",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesHRowe/infinite-marquee.git"
+  },
+  "keywords": [
+    "marquee",
+    "ticker",
+    "scroller"
+  ],
+  "author": "James Rowe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JamesHRowe/infinite-marquee/issues"
+  },
+  "homepage": "https://github.com/JamesHRowe/infinite-marquee#readme",
+  "dependencies": {
+    "gsap": "^3.8.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "laravel-mix": "^6.0.34",
+    "postcss": "^8.3.11",
+    "prettier": "^2.4.1",
+    "stylelint": "^14.0.1",
+    "stylelint-config-prettier": "^9.0.3"
+  }
+}
