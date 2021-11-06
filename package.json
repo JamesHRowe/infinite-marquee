@@ -16,7 +16,9 @@
   "keywords": [
     "marquee",
     "ticker",
-    "scroller"
+    "scroller",
+    "GSAP",
+    "CSS"
   ],
   "author": "James Rowe",
   "license": "MIT",
