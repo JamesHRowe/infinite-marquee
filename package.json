@@ -1,8 +1,8 @@
 {
   "name": "infinite-marquee",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Configurable package to create an infinite marquee effect. Animated with JS or CSS.",
-  "main": "assets/js/infinite-marquee.js",
+  "main": "resources/js/infinite-marquee.js",
   "scripts": {
     "dev": "mix",
     "watch": "mix watch",
