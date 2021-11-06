@@ -25,7 +25,9 @@ yarn add infinite-marquee
 #### CSS - Add the base styles to your CSS file.
 
 [`infinite-marquee.css `](https://github.com/JamesHRowe/infinite-marquee/blob/main/assets/css/infinite-marquee.css)
+
 OR
+
 `@import 'infinite-marquee/assets/css/infinite-marquee`
 
 ### Zero Config
