@@ -12,6 +12,8 @@ yarn add infinite-marquee
 
 ## Basic Usage
 
+[Basic Demo](https://codepen.io/JamesHRowe/pen/eYEMbXz)
+
 #### HTML
 
 ```html
@@ -65,6 +67,8 @@ new InfiniteMarquee()
 
 ## Advanced Usage
 
+[Options Demo](https://codepen.io/JamesHRowe/pen/QWMmYBG)
+
 ### Options Example
 
 ```HTML
@@ -81,9 +85,10 @@ new InfiniteMarquee()
 import InfiniteMarquee from 'infinite-marquee'
 
 new InfiniteMarquee({
-    el: document.querySelector('.my-marquee')
-    direction: 'right',
-    duration: 5
+  el: document.querySelector('.my-marquee'),
+  direction: 'right',
+  duration: 5,
+  css: false
 })
 ```
 
