@@ -131,6 +131,11 @@ var InfiniteMarquee = /*#__PURE__*/function () {
       } else {
         this.fillContainerJs();
       }
+
+      if (!this.options.css) {
+        this.animation.invalidate();
+        this.animation.restart();
+      }
     } // Add internal resize event
 
   }, {

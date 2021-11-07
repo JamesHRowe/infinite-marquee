@@ -60,6 +60,11 @@ export default class InfiniteMarquee {
     } else {
       this.fillContainerJs()
     }
+
+    if (!this.options.css) {
+      this.animation.invalidate()
+      this.animation.restart()
+    }
   }
 
   // Add internal resize event
