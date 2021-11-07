@@ -12,7 +12,11 @@ export default class InfiniteMarquee {
 
       this.fillCount = this.getFillCount()
 
-      this.fillContainer()
+      if (this.options.css) {
+        this.fillContainerCss()
+      } else {
+        this.fillContainerJs()
+      }
 
       this.animate()
 
@@ -51,7 +55,11 @@ export default class InfiniteMarquee {
 
     this.fillCount = count
 
-    this.fillContainer()
+    if (this.options.css) {
+      this.fillContainerCss()
+    } else {
+      this.fillContainerJs()
+    }
   }
 
   // Add internal resize event
@@ -65,17 +73,21 @@ export default class InfiniteMarquee {
     const containerWidth = this.dom.el.offsetWidth
     const contentWidth = this.dom.content.offsetWidth
 
-    // How many content items it takes to fill the container doubled (so animation can loop infinitely)
-    return Math.ceil(containerWidth / contentWidth) * 2
+    // How many content items it takes to fill the container (doubled if JS so animation can loop infinitely)
+    if (this.options.css) {
+      return Math.ceil(containerWidth / contentWidth)
+    } else {
+      return Math.ceil(containerWidth / contentWidth) * 2
+    }
   }
 
-  // Create and append DOM
-  fillContainer() {
+  // Create and append JS DOM
+  fillContainerJs() {
     const fragment = document.createDocumentFragment()
 
     for (let i = 0; i < this.fillCount; i++) {
-      const node = this.dom.content.cloneNode(true)
-      fragment.appendChild(node)
+      const contentClone = this.dom.content.cloneNode(true)
+      fragment.appendChild(contentClone)
     }
 
     this.dom.inner.innerHTML = ''
@@ -83,14 +95,32 @@ export default class InfiniteMarquee {
     this.dom.inner.appendChild(fragment)
   }
 
+  // Create and append CSS DOM
+  fillContainerCss() {
+    const fragment = document.createDocumentFragment()
+    const innerClone = this.dom.inner.cloneNode()
+
+    innerClone.style.setProperty(
+      'animation-duration',
+      `${this.options.duration}s`
+    )
+
+    for (let i = 0; i < this.fillCount; i++) {
+      const contentClone = this.dom.content.cloneNode(true)
+      innerClone.appendChild(contentClone)
+    }
+
+    fragment.appendChild(innerClone)
+    fragment.appendChild(innerClone.cloneNode(true))
+
+    this.dom.el.innerHTML = ''
+
+    this.dom.el.appendChild(fragment)
+  }
+
   // Create marquee animation
   animate() {
     if (this.options.css) {
-      this.dom.inner.style.setProperty(
-        'animation-duration',
-        `${this.options.duration}s`
-      )
-
       this.dom.el.classList.add(
         this.options.direction === 'left' ? 'marquee-left' : 'marquee-right'
       )
